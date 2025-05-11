@@ -1,0 +1,7 @@
+C:\Users\LENOVO\Desktop\Farhang\OrderManagementSystem\OrderService\obj\Debug\net8.0\OrderService.csproj.AssemblyReference.cache
+C:\Users\LENOVO\Desktop\Farhang\OrderManagementSystem\OrderService\obj\Debug\net8.0\OrderService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LENOVO\Desktop\Farhang\OrderManagementSystem\OrderService\obj\Debug\net8.0\OrderService.AssemblyInfoInputs.cache
+C:\Users\LENOVO\Desktop\Farhang\OrderManagementSystem\OrderService\obj\Debug\net8.0\OrderService.AssemblyInfo.cs
+C:\Users\LENOVO\Desktop\Farhang\OrderManagementSystem\OrderService\obj\Debug\net8.0\OrderService.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Desktop\Farhang\OrderManagementSystem\OrderService\obj\Debug\net8.0\OrderService.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\LENOVO\Desktop\Farhang\OrderManagementSystem\OrderService\obj\Debug\net8.0\OrderService.MvcApplicationPartsAssemblyInfo.cache

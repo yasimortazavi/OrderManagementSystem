@@ -1,0 +1,6 @@
+C:\Users\LENOVO\Desktop\Farhang\OrderManagementSystem\PaymentService\obj\Debug\net8.0\PaymentService.csproj.AssemblyReference.cache
+C:\Users\LENOVO\Desktop\Farhang\OrderManagementSystem\PaymentService\obj\Debug\net8.0\PaymentService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LENOVO\Desktop\Farhang\OrderManagementSystem\PaymentService\obj\Debug\net8.0\PaymentService.AssemblyInfoInputs.cache
+C:\Users\LENOVO\Desktop\Farhang\OrderManagementSystem\PaymentService\obj\Debug\net8.0\PaymentService.AssemblyInfo.cs
+C:\Users\LENOVO\Desktop\Farhang\OrderManagementSystem\PaymentService\obj\Debug\net8.0\PaymentService.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Desktop\Farhang\OrderManagementSystem\PaymentService\obj\Debug\net8.0\PaymentService.MvcApplicationPartsAssemblyInfo.cache

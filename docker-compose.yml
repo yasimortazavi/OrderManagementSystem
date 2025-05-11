@@ -1,0 +1,118 @@
+version: '3.9'
+services:
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - app-network
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:24.0
+    container_name: keycloak
+    command: start-dev
+    environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=admin
+    ports:
+      - "8080:8080"
+    networks:
+      - app-network
+
+  seq:
+    image: datalust/seq
+    container_name: seq
+    environment:
+      - ACCEPT_EULA=Y
+      - SEQ_API_KEY=123456
+    ports:
+      - "5341:80"
+    networks:
+      - app-network
+
+  # PostgreSQL databases
+  customerdb:
+    image: postgres
+    container_name: customerdb
+    environment:
+      POSTGRES_DB: customerdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5433:5432"
+    networks:
+      - app-network
+
+  orderdb:
+    image: postgres
+    container_name: orderdb
+    environment:
+      POSTGRES_DB: orderdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5434:5432"
+    networks:
+      - app-network
+
+  paymentdb:
+    image: postgres
+    container_name: paymentdb
+    environment:
+      POSTGRES_DB: paymentdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5435:5432"
+    networks:
+      - app-network
+
+  # Microservices
+  customer.api:
+    build:
+      context: ./Services/Customer/Customer.API
+      dockerfile: Dockerfile
+    ports:
+      - "7001:80"
+    depends_on:
+      - customerdb
+      - rabbitmq
+      - keycloak
+      - seq
+    networks:
+      - app-network
+
+  order.api:
+    build:
+      context: ./Services/Order/Order.API
+      dockerfile: Dockerfile
+    ports:
+      - "7002:80"
+    depends_on:
+      - orderdb
+      - rabbitmq
+      - keycloak
+      - seq
+    networks:
+      - app-network
+
+  payment.api:
+    build:
+      context: ./Services/Payment/Payment.API
+      dockerfile: Dockerfile
+    ports:
+      - "7003:80"
+    depends_on:
+      - paymentdb
+      - rabbitmq
+      - keycloak
+      - seq
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
